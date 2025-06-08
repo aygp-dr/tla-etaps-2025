@@ -49,25 +49,18 @@ help:
 	@echo "Downloaded files will be stored in the $(DOWNLOADS_DIR) directory."
 	@echo "These files are not committed to the repository."
 
-# Create necessary directories
-$(DOWNLOADS_DIR):
-	mkdir -p $(DOWNLOADS_DIR)
-
-$(SLIDES_DIR): $(DOWNLOADS_DIR)
-	mkdir -p $(SLIDES_DIR)
-
-$(VIDEOS_DIR): $(DOWNLOADS_DIR)
-	mkdir -p $(VIDEOS_DIR)
+# Directory targets (directories are already in git with .gitkeep files)
+# These are kept as order-only prerequisites for download targets
 
 # Alias for download-slides
 download: download-slides
 
 # Download slides and abstracts
-download-slides: $(SLIDES_DIR) $(SLIDES) $(ABSTRACTS)
+download-slides: $(SLIDES) $(ABSTRACTS)
 	@echo "All slides and abstracts downloaded to $(SLIDES_DIR)"
 
 # Download recordings using yt-dlp
-download-recordings: $(VIDEOS_DIR) $(VIDEOS)
+download-recordings: $(VIDEOS)
 	@echo "All recordings downloaded to $(VIDEOS_DIR)"
 
 # Download everything
@@ -79,79 +72,79 @@ clean:
 	rm -rf $(DOWNLOADS_DIR)
 
 # Individual slide downloads
-$(SLIDES_DIR)/nagendra-slides.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/nagendra-slides.pdf:
 	wget -O $@ $(CONF_URL)nagendra-slides.pdf || touch $@
 
-$(SLIDES_DIR)/hackett-slides.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/hackett-slides.pdf:
 	wget -O $@ $(CONF_URL)hackett-slides.pdf || touch $@
 
-$(SLIDES_DIR)/di-fatta-slides.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/di-fatta-slides.pdf:
 	wget -O $@ $(CONF_URL)di-fatta-slides.pdf || touch $@
 
-$(SLIDES_DIR)/laufer-slides.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/laufer-slides.pdf:
 	wget -O $@ $(CONF_URL)laufer-slides.pdf || touch $@
 
-$(SLIDES_DIR)/filali-slides.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/filali-slides.pdf:
 	wget -O $@ $(CONF_URL)filali-slides.pdf || touch $@
 
-$(SLIDES_DIR)/demirbas-slides.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/demirbas-slides.pdf:
 	wget -O $@ $(CONF_URL)demirbas-slides.pdf || touch $@
 
-$(SLIDES_DIR)/davis-slides.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/davis-slides.pdf:
 	wget -O $@ $(CONF_URL)davis-slides.pdf || touch $@
 
-$(SLIDES_DIR)/helwer-slides.odp: | $(SLIDES_DIR)
+$(SLIDES_DIR)/helwer-slides.odp:
 	wget -O $@ $(CONF_URL)helwer-slides.odp || touch $@
 
 # Individual abstract downloads
-$(SLIDES_DIR)/nagendra.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/nagendra.pdf:
 	wget -O $@ $(CONF_URL)nagendra.pdf || touch $@
 
-$(SLIDES_DIR)/hackett.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/hackett.pdf:
 	wget -O $@ $(CONF_URL)hackett.pdf || touch $@
 
-$(SLIDES_DIR)/di-fatta.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/di-fatta.pdf:
 	wget -O $@ $(CONF_URL)di-fatta.pdf || touch $@
 
-$(SLIDES_DIR)/laufer.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/laufer.pdf:
 	wget -O $@ $(CONF_URL)laufer.pdf || touch $@
 
-$(SLIDES_DIR)/filali.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/filali.pdf:
 	wget -O $@ $(CONF_URL)filali.pdf || touch $@
 
-$(SLIDES_DIR)/demirbas.pdf: | $(SLIDES_DIR)
+$(SLIDES_DIR)/demirbas.pdf:
 	wget -O $@ $(CONF_URL)demirbas.pdf || touch $@
 
-$(SLIDES_DIR)/davis.txt: | $(SLIDES_DIR)
+$(SLIDES_DIR)/davis.txt:
 	wget -O $@ $(CONF_URL)davis.txt || touch $@
 
-$(SLIDES_DIR)/helwer.txt: | $(SLIDES_DIR)
+$(SLIDES_DIR)/helwer.txt:
 	wget -O $@ $(CONF_URL)helwer.txt || touch $@
 
 # Individual video downloads
-$(VIDEOS_DIR)/nagendra.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/nagendra.mp4:
 	yt-dlp -o $@ https://youtu.be/DO8MvouV29M || touch $@
 
-$(VIDEOS_DIR)/hackett.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/hackett.mp4:
 	yt-dlp -o $@ https://youtu.be/MLvLQ4p9je4 || touch $@
 
-$(VIDEOS_DIR)/di-fatta.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/di-fatta.mp4:
 	yt-dlp -o $@ https://youtu.be/0A5qMWvFgdI || touch $@
 
-$(VIDEOS_DIR)/di-fatta-qa.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/di-fatta-qa.mp4:
 	yt-dlp -o $@ https://youtu.be/NgYIS02EUnI || touch $@
 
-$(VIDEOS_DIR)/laufer.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/laufer.mp4:
 	yt-dlp -o $@ https://youtu.be/726oDQQRxBQ || touch $@
 
-$(VIDEOS_DIR)/filali.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/filali.mp4:
 	yt-dlp -o $@ https://youtu.be/6mTGeNVkKZo || touch $@
 
-$(VIDEOS_DIR)/demirbas.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/demirbas.mp4:
 	yt-dlp -o $@ https://youtu.be/fIWUo4gzvNE || touch $@
 
-$(VIDEOS_DIR)/davis.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/davis.mp4:
 	yt-dlp -o $@ https://youtu.be/Wekywox2Ghk || touch $@
 
-$(VIDEOS_DIR)/helwer.mp4: | $(VIDEOS_DIR)
+$(VIDEOS_DIR)/helwer.mp4:
 	yt-dlp -o $@ https://youtu.be/KrhZebeRn90 || touch $@
