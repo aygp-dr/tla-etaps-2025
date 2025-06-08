@@ -1,4 +1,4 @@
-.PHONY: help download download-slides download-recordings download-all clean
+.PHONY: help download download-slides download-recordings download-all clean generate-summaries
 
 # Conference URLs and directories
 CONF_URL = https://conf.tlapl.us/2025-etaps/
@@ -44,6 +44,7 @@ help:
 	@echo "  download-slides    - Download all slides and abstracts"
 	@echo "  download-recordings - Download all video recordings"
 	@echo "  download-all       - Download all materials (slides, abstracts, and videos)"
+	@echo "  generate-summaries - Extract text from PDFs using pdftotext (if available)"
 	@echo "  clean              - Remove all downloaded files"
 	@echo ""
 	@echo "Downloaded files will be stored in the $(DOWNLOADS_DIR) directory."
@@ -67,9 +68,25 @@ download-recordings: $(VIDEOS)
 download-all: download-slides download-recordings
 	@echo "All conference materials downloaded to $(DOWNLOADS_DIR)"
 
+# Generate deep summaries using pdftotext
+generate-summaries: download-slides
+	@which pdftotext > /dev/null 2>&1 || { echo "pdftotext not found. Please install poppler-utils."; exit 1; }
+	@echo "Generating detailed summaries from PDF files..."
+	@mkdir -p $(DOWNLOADS_DIR)/summaries
+	@for pdf in $(SLIDES_DIR)/*.pdf; do \
+		if [ -f "$$pdf" ]; then \
+			filename=$$(basename "$$pdf"); \
+			echo "Extracting text from $$filename..."; \
+			pdftotext -layout "$$pdf" "$(DOWNLOADS_DIR)/summaries/$${filename%.pdf}.txt"; \
+		fi; \
+	done
+	@echo "Summaries generated in $(DOWNLOADS_DIR)/summaries/"
+
 # Clean up downloaded files
 clean:
-	rm -rf $(DOWNLOADS_DIR)
+	rm -rf $(DOWNLOADS_DIR)/*
+	@find $(DOWNLOADS_DIR) -type d -empty -delete 2>/dev/null || true
+	@find $(DOWNLOADS_DIR) -not -name ".gitkeep" -not -path "*/\.*" -delete 2>/dev/null || true
 
 # Individual slide downloads
 $(SLIDES_DIR)/nagendra-slides.pdf:

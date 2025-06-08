@@ -60,6 +60,42 @@ Official website: [[https://conf.tlapl.us/2025-etaps/][conf.tlapl.us/2025-etaps/
 ** About TLA+
 TLA+ is a formal specification language developed by Leslie Lamport. It's used for designing, modeling, documenting, and verifying concurrent and distributed systems. TLA+ helps engineers find design flaws before implementation, potentially saving significant development time and preventing critical bugs.
 
+* Repository Usage
+
+** Download Conference Materials
+This repository includes a Makefile with several targets for downloading and working with conference materials:
+
+#+BEGIN_SRC shell
+# Download slides and abstracts (default download option)
+make download
+
+# Download video recordings (requires yt-dlp)
+make download-recordings
+
+# Download all materials (slides, abstracts, and videos)
+make download-all
+
+# Generate detailed text summaries from PDF files (requires pdftotext)
+make generate-summaries
+
+# Clean up downloaded files
+make clean
+#+END_SRC
+
+Downloaded files will be stored in the =downloads/= directory but are not committed to the repository.
+
+** View Session Information
+For detailed information about each talk:
+
+1. The =sessions.org= file contains an overview of all presentations with summaries and links to materials.
+2. After running =make download=, you can access slides and abstracts in =downloads/slides/=.
+3. After running =make generate-summaries=, you can find detailed text extractions from PDFs in =downloads/summaries/=.
+
+** Requirements
+- =wget= for downloading slides and abstracts
+- =yt-dlp= for downloading video recordings
+- =pdftotext= (from poppler-utils) for generating text summaries from PDFs
+
 * Related Resources
 - [[https://lamport.azurewebsites.net/tla/tla.html][TLA+ Home Page]]
 - [[https://github.com/tlaplus/tlaplus][TLA+ Toolbox on GitHub]]
