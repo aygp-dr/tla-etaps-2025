@@ -1,0 +1,67 @@
+#+TITLE: TLA+ Community Event @ ETAPS 2025
+#+AUTHOR: TLA+ Community
+#+DATE: May 4, 2025
+
+* TLA+ Community Event 2025
+
+** Overview
+The TLA+ Community Event 2025 is a forum for industrial and academic users of TLA+ to exchange ideas and experiences. It's co-located with [[https://etaps.org/2025/][ETAPS 2025]] in Hamilton, Ontario, Canada.
+
+** Event Details
+- *Date*: Sunday, May 4, 2025
+- *Location*: Hamilton, Ontario, Canada
+- *Venue*: ETAPS 2025 conference venue
+- *Registration*: Required through ETAPS 2025 registration system
+
+** Conference Sections
+
+*** Morning Session
+- Technical presentations
+- Tool demonstrations
+- Case studies from industry and academia
+
+*** Lunch Break
+- Networking opportunity
+- Informal discussions
+
+*** Afternoon Session
+- More technical presentations
+- New developments in TLA+ tooling
+- Educational approaches
+
+*** Evening Session
+- Discussion panel
+- Q&A with TLA+ experts
+- Closing remarks
+
+** Presentation Topics
+Presentations may cover a variety of topics related to TLA+, including:
+
+- Industrial case studies
+- Academic research
+- New tools and extensions
+- Novel applications of TLA+
+- Teaching TLA+
+- Experience reports
+- Integration with other formal methods
+
+** Organizers
+- Igor Konnov (TU Wien)
+- Markus Kuppe (Nvidia)
+- Murat Demirbas (MongoDB)
+- Stephan Merz (Inria Nancy)
+
+** Contact
+For questions about the event, please contact: =tla2024@tlapl.us=
+
+** Website
+Official website: [[https://conf.tlapl.us/2025-etaps/][conf.tlapl.us/2025-etaps/]]
+
+** About TLA+
+TLA+ is a formal specification language developed by Leslie Lamport. It's used for designing, modeling, documenting, and verifying concurrent and distributed systems. TLA+ helps engineers find design flaws before implementation, potentially saving significant development time and preventing critical bugs.
+
+* Related Resources
+- [[https://lamport.azurewebsites.net/tla/tla.html][TLA+ Home Page]]
+- [[https://github.com/tlaplus/tlaplus][TLA+ Toolbox on GitHub]]
+- [[https://learntla.com/][Learn TLA+]]
+- [[https://tla2019.conf.tlapl.us/][Previous TLA+ Community Events]]
