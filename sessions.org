@@ -1,0 +1,122 @@
+#+TITLE: TLA+ Community Event 2025 - Sessions
+#+AUTHOR: TLA+ Community
+#+DATE: May 4, 2025
+
+* TLA+ Conference Sessions
+
+** Morning Sessions
+
+*** Welcome & Opening Announcements (09:00)
+*Time:* 09:00  
+*Presenters:* TLA+ Community Event Organizers  
+*Description:* Opening remarks and announcements for the day.
+
+*** ModelFuzz: Model guided fuzzing of distributed systems (09:15)
+*Time:* 09:15  
+*Speaker:* Srinidhi Nagendra  
+*Affiliation:* Max Planck Institute for Software Systems  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/nagendra.pdf][Abstract]], [[https://conf.tlapl.us/2025-etaps/nagendra-slides.pdf][Slides]], [[https://youtu.be/DO8MvouV29M][Video]]  
+
+*Summary:*  
+This talk introduces ModelFuzz, a novel approach that combines formal methods with fuzzing techniques to test distributed systems. The approach uses TLA+ models to guide the fuzzing process, allowing for more efficient exploration of the state space and better detection of subtle concurrency bugs and protocol violations.
+
+*** Coffee Break (10:00)
+*Time:* 10:00  
+*Duration:* 30 minutes
+
+*** Automating Trace Validation with PGo (10:30)
+*Time:* 10:30  
+*Speakers:* Finn Hackett & Ivan Beschastnikh  
+*Affiliation:* University of British Columbia  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/hackett.pdf][Abstract]], [[https://conf.tlapl.us/2025-etaps/hackett-slides.pdf][Slides]], [[https://youtu.be/MLvLQ4p9je4][Video]]  
+
+*Summary:*  
+This presentation discusses PGo, a tool for generating executable Go code from PlusCal and TLA+ specifications. The focus is on the automated trace validation features that allow developers to verify that system logs and execution traces conform to the formal specification, providing a powerful bridge between specification and implementation.
+
+*** Translating C to PlusCal for Model Checking of Safety Properties on Source Code (11:15)
+*Time:* 11:15  
+*Speakers:* Guillaume DI FATTA, Emmanuel Ohayon, and Amira Methni  
+*Affiliation:* Asterios Technologies  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/di-fatta.pdf][Abstract]], [[https://conf.tlapl.us/2025-etaps/di-fatta-slides.pdf][Slides]], [[https://youtu.be/0A5qMWvFgdI][Video]], [[https://youtu.be/NgYIS02EUnI][Q&A]]  
+
+*Summary:*  
+This talk presents a novel approach to safety verification by translating C code to PlusCal specifications for formal verification. The speakers discuss their tool that automatically extracts models from source code, allowing engineers to verify critical safety properties of embedded systems directly on their implementation.
+
+*** TLA+ for All: Model Checking in a Python Notebook (12:00)
+*Time:* 12:00  
+*Speakers:* Konstantin Läufer & George K. Thiruvathukal  
+*Affiliation:* Loyola University Chicago  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/laufer.pdf][Abstract]], [[https://conf.tlapl.us/2025-etaps/laufer-slides.pdf][Slides]], [[https://youtu.be/726oDQQRxBQ][Video]]  
+
+*Summary:*  
+This presentation demonstrates an educational approach to teaching TLA+ through Python Jupyter notebooks. The speakers introduce tools and techniques for integrating TLA+ model checking within the notebook environment, making formal methods more accessible to students and practitioners with Python backgrounds.
+
+** Lunch Break (12:30)
+*Time:* 12:30  
+*Duration:* 1 hour 30 minutes
+
+** Afternoon Sessions
+
+*** Formal models for monotonic pipeline architectures (14:00)
+*Time:* 14:00  
+*Speakers:* J.-P. Bodeveix, A. Bonenfant, T. Carle, M. Filali, C. Rochange  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/filali.pdf][Abstract]], [[https://conf.tlapl.us/2025-etaps/filali-slides.pdf][Slides]], [[https://youtu.be/6mTGeNVkKZo][Video]]  
+
+*Summary:*  
+This talk explores the application of formal methods to verify properties of monotonic pipeline architectures in computing systems. The presenters show how TLA+ specifications can model and verify timing behavior and correctness of pipeline designs, with particular focus on real-time embedded systems.
+
+*** TLA+ Modeling of MongoDB Transactions (14:45)
+*Time:* 14:45  
+*Speakers:* Murat Demirbas & Will Schultz  
+*Affiliation:* MongoDB  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/demirbas.pdf][Abstract]], [[https://conf.tlapl.us/2025-etaps/demirbas-slides.pdf][Slides]], [[https://youtu.be/fIWUo4gzvNE][Video]]  
+
+*Summary:*  
+This presentation details MongoDB's use of TLA+ for modeling and verifying distributed database transactions. The speakers discuss how formal specification helped uncover subtle bugs in transaction protocols and guided the design of MongoDB's transaction implementation.
+
+*** Are We Serious About Using TLA+ For Statistical Properties? (15:30)
+*Time:* 15:30  
+*Speaker:* A. Jesse Jiryu Davis  
+*Affiliation:* MongoDB  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/davis.txt][Abstract]], [[https://conf.tlapl.us/2025-etaps/davis-slides.pdf][Slides]], [[https://youtu.be/Wekywox2Ghk][Video]]  
+
+*Summary:*  
+In this thought-provoking talk, Jesse Davis challenges the TLA+ community to consider how serious we are about using TLA+ for statistical properties and performance modeling. Building on Marc Brooker's observation that "Formal Methods Only Solve Half My Problems," Davis argues that current approaches using the Randomization module, TLCSet operator, and CSV module are clever but insufficient for serious statistical modeling.
+
+Key points:
+- The Randomization module only provides uniform distributions with integer parameters, while real performance modeling needs various distributions (Poisson, exponential, Zipf)
+- Current statistical modeling in TLA+ requires finicky, low-level code that clutters specifications
+- Other tools like PRISM, Java Modeling Tools, and FizzBee offer purpose-built features for performance modeling
+- The community should decide whether to commit to statistical features in TLA+ and what the ideal syntax and user experience would look like
+
+** Coffee Break (16:00)
+*Time:* 16:00  
+*Duration:* 30 minutes
+
+*** It's never been easier to write TLA⁺ tooling! (16:30)
+*Time:* 16:30  
+*Speaker:* Andrew Helwer  
+*Materials:* [[https://conf.tlapl.us/2025-etaps/helwer.txt][Abstract]], [[https://conf.tlapl.us/2025-etaps/helwer-slides.odp][Slides]], [[https://youtu.be/KrhZebeRn90][Video]]  
+
+*Summary:*  
+Andrew Helwer's talk focuses on the growing ecosystem of TLA+ tooling and encourages community members to build their own implementations. Helwer argues that "toy" implementations of TLA+ parsers, interpreters, and model-checkers are vital for preparing community members to tackle difficult problems in industrial-strength language tooling.
+
+Key points:
+- Recent developments like Spectacle (a web-based TLA+ interpreter by William Schultz) show the potential for novel TLA+ applications
+- Building minimal TLA+ tools helps developers understand the language deeply
+- These projects prepare the community to tackle more difficult problems in industrial tooling
+- Helwer proposes a "1 billion states per minute initiative" to improve TLC throughput by 1,000 times or more through a TLA+ bytecode interpreter
+
+*** Discussion Panel, Announcements, and Closing Remarks (17:00)
+*Time:* 17:00  
+*Duration:* 30 minutes  
+*Description:* A panel discussion with conference speakers, closing announcements, and final remarks.
+
+*** End of the conference (17:30)
+*Time:* 17:30
+
+* Conference Organizers
+- Igor Konnov (TU Wien)
+- Markus Kuppe (Nvidia)
+- Murat Demirbas (MongoDB)
+- Stephan Merz (Inria Nancy)
