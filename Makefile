@@ -68,18 +68,11 @@ download-recordings: $(VIDEOS)
 download-all: download-slides download-recordings
 	@echo "All conference materials downloaded to $(DOWNLOADS_DIR)"
 
-# Generate deep summaries using pdftotext
+# Generate summaries using external script
 generate-summaries: download-slides
-	@which pdftotext > /dev/null 2>&1 || { echo "pdftotext not found. Please install poppler-utils."; exit 1; }
-	@echo "Generating detailed summaries from PDF files..."
+	@echo "Generating summaries from files..."
 	@mkdir -p $(DOWNLOADS_DIR)/summaries
-	@for pdf in $(SLIDES_DIR)/*.pdf; do \
-		if [ -f "$$pdf" ]; then \
-			filename=$$(basename "$$pdf"); \
-			echo "Extracting text from $$filename..."; \
-			pdftotext -layout "$$pdf" "$(DOWNLOADS_DIR)/summaries/$${filename%.pdf}.txt"; \
-		fi; \
-	done
+	@find $(SLIDES_DIR) -type f \( -name "*.pdf" -o -name "*.txt" \) -exec ./scripts/extract_text.sh {} $(DOWNLOADS_DIR)/summaries \;
 	@echo "Summaries generated in $(DOWNLOADS_DIR)/summaries/"
 
 # Clean up downloaded files
