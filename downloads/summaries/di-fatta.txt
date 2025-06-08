@@ -1,0 +1,16 @@
+# Translating C to PlusCal for Model Checking of Safety Properties on Source Code
+## Guillaume DI FATTA, Emmanuel Ohayon, and Amira Methni, Asterios Technologies
+
+This talk presents a novel approach to safety verification by translating C code to PlusCal specifications for formal verification. The speakers discuss their tool that automatically extracts models from source code, allowing engineers to verify critical safety properties of embedded systems directly on their implementation.
+
+Key aspects of the presentation:
+1. Challenges of verifying safety properties in C code for embedded systems
+2. Overview of the translation approach from C to PlusCal
+3. Handling C language features and constructs in the translation process
+4. Addressing state space explosion in the generated models
+5. Case studies from real-world embedded systems
+6. Integration with existing development workflows
+7. Comparison with other verification approaches for C code
+8. Limitations and future work
+
+The presentation shows how formal methods can be applied to existing codebases without requiring engineers to manually create specifications, making TLA+ and PlusCal more accessible for verifying critical embedded software.

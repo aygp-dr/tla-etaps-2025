@@ -1,0 +1,16 @@
+# Formal models for monotonic pipeline architectures
+## J.-P. Bodeveix, A. Bonenfant, T. Carle, M. Filali, C. Rochange
+
+This talk explores the application of formal methods to verify properties of monotonic pipeline architectures in computing systems. The presenters show how TLA+ specifications can model and verify timing behavior and correctness of pipeline designs, with particular focus on real-time embedded systems.
+
+Key aspects of the presentation:
+1. Introduction to monotonic pipeline architectures and their properties
+2. Challenges in verifying timing behavior in real-time systems
+3. TLA+ modeling approach for pipeline architectures
+4. Expressing and verifying temporal properties
+5. Case studies from real-time embedded systems
+6. Performance analysis and WCET (Worst-Case Execution Time) guarantees
+7. Integration with existing embedded system design workflows
+8. Comparison with other formal approaches for timing verification
+
+The presentation demonstrates how TLA+ can be applied beyond traditional distributed systems verification to address challenges in real-time computing and hardware/software interface verification, expanding the domain of application for formal methods.

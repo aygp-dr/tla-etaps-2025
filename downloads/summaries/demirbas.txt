@@ -1,0 +1,16 @@
+# TLA+ Modeling of MongoDB Transactions
+## Murat Demirbas & Will Schultz, MongoDB
+
+This presentation details MongoDB's use of TLA+ for modeling and verifying distributed database transactions. The speakers discuss how formal specification helped uncover subtle bugs in transaction protocols and guided the design of MongoDB's transaction implementation.
+
+Key aspects of the presentation:
+1. Introduction to MongoDB's distributed architecture and transaction requirements
+2. Challenges in designing distributed transactions with specific isolation guarantees
+3. TLA+ modeling approach for MongoDB transactions
+4. How formal specification influenced the design process
+5. Specific bugs and edge cases discovered through model checking
+6. Integration of TLA+ into MongoDB's engineering workflow
+7. Lessons learned and best practices for applying TLA+ in industry
+8. Evolution of the specification alongside the implementation
+
+The presentation provides a real-world industrial case study of applying formal methods to a complex distributed system, showing how TLA+ can be an integral part of the design and implementation process for critical database features like transactions.

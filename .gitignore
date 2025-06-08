@@ -1,6 +1,9 @@
 # Ignore downloaded files in downloads directory, but keep directory structure
 /downloads/**/*.pdf
-/downloads/**/*.txt
+/downloads/slides/*.txt
 /downloads/**/*.odp
 /downloads/**/*.mp4
 /downloads/**/*.webm
+
+# But include the summary text files
+!/downloads/summaries/*.txt

@@ -1,0 +1,15 @@
+# Automating Trace Validation with PGo
+## Finn Hackett & Ivan Beschastnikh, University of British Columbia
+
+This presentation discusses PGo, a tool for generating executable Go code from PlusCal and TLA+ specifications. The focus is on the automated trace validation features that allow developers to verify that system logs and execution traces conform to the formal specification, providing a powerful bridge between specification and implementation.
+
+Key aspects of the presentation:
+1. Introduction to PGo and its capabilities
+2. Challenges of bridging formal specifications and implementations
+3. Approach to trace validation and runtime verification
+4. Implementation details of the trace validation system
+5. Case studies showing how PGo detects specification violations in execution traces
+6. Performance considerations and optimizations
+7. Future work and extensions
+
+The talk demonstrates how formal specifications can be leveraged beyond design-time verification to provide runtime validation of actual system executions, enhancing confidence in both the specification and implementation.

@@ -1,0 +1,16 @@
+# TLA+ for All: Model Checking in a Python Notebook
+## Konstantin Läufer & George K. Thiruvathukal, Loyola University Chicago
+
+This presentation demonstrates an educational approach to teaching TLA+ through Python Jupyter notebooks. The speakers introduce tools and techniques for integrating TLA+ model checking within the notebook environment, making formal methods more accessible to students and practitioners with Python backgrounds.
+
+Key aspects of the presentation:
+1. Challenges in teaching formal methods to software engineering students
+2. Integration of TLA+ into Jupyter notebook environments
+3. Python bindings for TLC and other TLA+ tools
+4. Interactive visualization of state spaces and counterexamples
+5. Pedagogical approach for introducing TLA+ concepts incrementally
+6. Comparison with traditional TLA+ teaching methods
+7. Student feedback and learning outcomes
+8. Open-source tools and resources for educators
+
+The presentation shows how modern interactive computing environments can make formal methods more approachable, especially for students and practitioners already familiar with Python and data science tools, thereby expanding the reach of TLA+ in computer science education.

@@ -1,0 +1,14 @@
+# ModelFuzz: Model guided fuzzing of distributed systems
+## Srinidhi Nagendra, Max Planck Institute for Software Systems
+
+This presentation introduces ModelFuzz, a novel approach that combines formal methods with fuzzing techniques to test distributed systems. The approach uses TLA+ models to guide the fuzzing process, allowing for more efficient exploration of the state space and better detection of subtle concurrency bugs and protocol violations.
+
+Key aspects of the presentation:
+1. The challenges of testing distributed systems
+2. Current limitations of traditional fuzzing techniques
+3. How TLA+ models can guide the fuzzing process
+4. Implementation details of the ModelFuzz tool
+5. Case studies and evaluation results
+6. Future directions and potential applications
+
+This innovative approach bridges the gap between formal verification and dynamic testing, showing how formal specifications can enhance testing techniques beyond their traditional use in verification.
