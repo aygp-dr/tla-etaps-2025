@@ -68,12 +68,17 @@ download-recordings: $(VIDEOS)
 download-all: download-slides download-recordings
 	@echo "All conference materials downloaded to $(DOWNLOADS_DIR)"
 
-# Generate summaries using external script
+# Generate summaries by copying text files
 generate-summaries: download-slides
-	@echo "Generating summaries from files..."
+	@echo "Generating summaries by copying text files..."
 	@mkdir -p $(DOWNLOADS_DIR)/summaries
-	@find $(SLIDES_DIR) -type f \( -name "*.pdf" -o -name "*.txt" \) -exec ./scripts/extract_text.sh {} $(DOWNLOADS_DIR)/summaries \;
-	@echo "Summaries generated in $(DOWNLOADS_DIR)/summaries/"
+	@for txt in $(SLIDES_DIR)/*.txt; do \
+		if [ -f "$$txt" ]; then \
+			cp "$$txt" "$(DOWNLOADS_DIR)/summaries/"; \
+			echo "Copied $$(basename $$txt)"; \
+		fi; \
+	done
+	@echo "Text file summaries available in $(DOWNLOADS_DIR)/summaries/"
 
 # Clean up downloaded files
 clean:
